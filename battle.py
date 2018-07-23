@@ -3,8 +3,16 @@ HI GUYS U ARE IN BATTLE.PY WHICH IS A DATABASE OF THE SYSTEM
 
 """
 import random
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD  = '\033[1m'
+    UNDERLINE = '\033[4m'
 
-from magic import Spell
 
 
 class Person:
@@ -51,14 +59,15 @@ class Person:
 
     def choose_action( self ):
         i = 1
-        print( "Action" )
+        print(bcolors.OKGREEN+ "Action" )
         for item in self.actions:
             print( str( i ) + ":" , item )
             i += 1
-
+        print(bcolors.ENDC)
     def choose_magic( self ):
         i = 1
-        print( "Magic" )
+        print( bcolors.OKBLUE+"Magic" )
         for spell in self.magic:
             print( str( i ) + ":" , spell.name , "(cost:" , str( spell.cost ) + ") " )
             i += 1
+        print(bcolors.ENDC)
